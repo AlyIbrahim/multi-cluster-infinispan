@@ -1,0 +1,3 @@
+[submodule "redhat-airline"]
+	path = redhat-airline
+	url = https://github.com/vincent-tsugranes/redhat-airline.git
