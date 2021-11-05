@@ -1,3 +1,6 @@
 [submodule "redhat-airline"]
 	path = redhat-airline
 	url = https://github.com/vincent-tsugranes/redhat-airline.git
+[submodule "redhat-airline-booking-api"]
+	path = redhat-airline-booking-api
+	url = https://github.com/srichandangv/redhat-airline-booking-api.git
