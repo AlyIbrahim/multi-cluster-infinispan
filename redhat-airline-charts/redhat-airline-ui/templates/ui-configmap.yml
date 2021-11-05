@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  VUE_APP_AIRPORT_API_URL: http://airport-api-{{ $.Release.Namespace }}.{{ $.Values.host }}
+  VUE_APP_BOOKING_API_URL: http://booking-api-{{ $.Release.Namespace }}.{{ $.Values.host }}
+  VUE_APP_CARGO_API_URL: http://cargo-api-{{ $.Release.Namespace }}.{{ $.Values.host }}
+  VUE_APP_CREWMEMBER_API_URL: http://crewmember-api-{{ $.Release.Namespace }}.{{ $.Values.host }}
+  VUE_APP_FLIGHT_API_URL: http://flight-api-{{ $.Release.Namespace }}.{{ $.Values.host }}
+kind: ConfigMap
+metadata:
+  name: {{ .Values.appName }}-conf

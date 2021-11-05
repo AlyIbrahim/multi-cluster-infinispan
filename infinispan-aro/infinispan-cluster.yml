@@ -1,0 +1,29 @@
+apiVersion: infinispan.org/v1
+kind: Infinispan
+metadata:
+  name: infinispan
+spec:
+  replicas: 3
+  service:
+    type: DataGrid
+    sites:
+      local:
+        name: ARO
+        expose:
+          type: LoadBalancer
+            #          port: 65535
+      locations:
+        - name: AWS
+          clusterName: infinispan
+          namespace: data-grid
+          url: openshift://api.cluster-3c98.3c98.sandbox106.opentlc.com:6443
+          secretName: aws-token
+  logging:
+    categories:
+      org.jgroups.protocols.TCP: error
+      org.jgroups.protocols.relay.RELAY2: error
+  security:
+    endpointAuthentication: false
+    endpointEncryption:
+      clientCert: None
+      type: None
